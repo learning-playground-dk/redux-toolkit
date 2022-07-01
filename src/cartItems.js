@@ -23,7 +23,7 @@ const cartItems = [
   {
     id: 'recwTo160XST3PIoW',
     title: 'Samsung Galaxy S7',
-    price: '599.99 ',
+    price: '599.99',
     img: 'https://dl.airtable.com/.attachments/91ee456448cef47deec553a2ea3fa8ad/b08bec68/phone-2_ohtt5s.png',
     amount: 1,
   },
