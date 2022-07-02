@@ -680,7 +680,7 @@ function App() {
 export default App;
 ```
 
-#### Options
+#### Options with AsyncThunk
 
 ```sh
 npm install axios
@@ -695,13 +695,13 @@ export const getCartItems = createAsyncThunk(
     try {
       // console.log(name);
       // console.log(thunkAPI);
-      // console.log(thunkAPI.getState());
-      // thunkAPI.dispatch(openModal());
+      // console.log(thunkAPI.getState()); // accessing state of entire app (all slices)
+      // thunkAPI.dispatch(openModal()); // can call reducers of different slices
       const resp = await axios(url);
 
       return resp.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue('something went wrong');
+      return thunkAPI.rejectWithValue('something went wrong'); // this error will be present on the action so we can display it using `action.payload`
     }
   }
 );
